@@ -6,6 +6,7 @@ using System.Runtime.InteropServices;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.Rendering;
+using UnityEngine.SceneManagement;
 
 public class PlayerController : MonoBehaviour
 {
@@ -128,5 +129,13 @@ public class PlayerController : MonoBehaviour
     public string getEquippedGun()
     {
         return equippedGun;
+    }
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        if (collision.gameObject.CompareTag("Treasure"))
+        {
+            SceneManager.LoadScene("PlayerWin");
+        }
     }
 }

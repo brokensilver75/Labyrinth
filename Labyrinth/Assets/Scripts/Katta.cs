@@ -9,7 +9,7 @@ public class Katta : MonoBehaviour
         
     private void Awake()
     {
-        gun = new Gun(10, 10, kattaFire);
+        gun = new Gun(12, 12, kattaFire);
     }
     
     public void FireKatta()
