@@ -8,6 +8,7 @@ TagManager:
   - Gun
   - MotabhAI
   - PlayerBullet
+  - Eggman
   layers:
   - Default
   - TransparentFX

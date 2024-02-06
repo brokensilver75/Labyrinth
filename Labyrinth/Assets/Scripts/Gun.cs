@@ -31,7 +31,8 @@ public class Gun
 
     public void raiseAmmo()
     {
-        currentAmmo += 5;
+        if (currentAmmo < totalAmmo)
+        currentAmmo += 2;
     }
 
     public int getAmmo()

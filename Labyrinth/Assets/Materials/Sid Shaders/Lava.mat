@@ -44,7 +44,7 @@ Material:
     - _X_Speed: 0.05
     - _Y_Speed: 0.002
     m_Colors:
-    - _Color: {r: 12.778246, g: 1.6596775, b: 0.8036619, a: 1}
+    - _Color: {r: 6.389123, g: 0.82983875, b: 0.40183094, a: 1}
   m_BuildTextureStacks: []
 --- !u!114 &545609260096685881
 MonoBehaviour:

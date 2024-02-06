@@ -7,7 +7,7 @@ using UnityEngine.VFX;
 public class Enemy
 {
     float sightRange, attackRange, timebetweenAttacks;
-    Gun gun;
+    //Gun gun;
     float dropChance = 0;
     public Animator enemyAnimator;
 
@@ -67,13 +67,13 @@ public class Enemy
         isDead = deathFlag;
     }
 
-    public Enemy(float sightRange, float attackRange, float timeBetweenAttacks, GameObject ammoDrop, Gun gun, bool isDead, Animator enemyAnimator)
+    public Enemy(float sightRange, float attackRange, float timeBetweenAttacks, GameObject ammoDrop, bool isDead, Animator enemyAnimator)
     {
         this.sightRange = sightRange;
         this.attackRange = attackRange;
         this.timebetweenAttacks = timeBetweenAttacks;
         this.ammoDrop = ammoDrop;
-        this.gun = gun;
+        //this.gun = gun;
         this.isDead = isDead;
         this.enemyAnimator = enemyAnimator;
     }

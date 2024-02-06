@@ -9,7 +9,7 @@ using UnityEditor.Animations;
 using Unity.VisualScripting;
 using UnityEngine.SceneManagement;
 
-public class MotabhaiAI : MonoBehaviour
+public class Eggman : MonoBehaviour
 {
     [SerializeField] float sightRange;
     [SerializeField] float attackRange;
@@ -20,6 +20,7 @@ public class MotabhaiAI : MonoBehaviour
     [SerializeField] Animator motaBhaiAnimator;
     bool playerInSightRange, playerInAttackRange;
     public Enemy motaBhai;
+    private int ammoDropChance;
 
     //ATTACK
     public float timeBetweenAttacks;
@@ -68,7 +69,11 @@ public class MotabhaiAI : MonoBehaviour
 
     public void Onhit()
     {
+        ammoDropChance = Random.Range(1, 5);
         StartCoroutine(Freeze());
+        if (ammoDropChance == 1)
+        Instantiate(ammoDrop, transform.position, Quaternion.identity);
+        Destroy(gameObject);
     }
 
     IEnumerator Freeze()
@@ -80,8 +85,6 @@ public class MotabhaiAI : MonoBehaviour
         agent.isStopped = false;
     }
 
-
-
     private void OnCollisionEnter(Collision collision)
     {
         if (collision.gameObject.CompareTag("Player"))
@@ -90,7 +93,18 @@ public class MotabhaiAI : MonoBehaviour
         }
     }
 
-    
+
+
+    /*private void OnCollisionEnter(Collision collision)
+    {
+        if (collision.gameObject.CompareTag("PlayerBullet"))
+        {
+            Instantiate(ammoDrop, transform.position, Quaternion.identity);
+            Destroy(gameObject);
+        }
+    }*/
+
+
     /*private void OnDestroy()
     {
         Instantiate(ammoDrop, transform.position, Quaternion.identity);

@@ -30,5 +30,11 @@ public class BulletBehaviour : MonoBehaviour
             other.gameObject.GetComponent<MotabhaiAI>().Onhit();
             other.gameObject.GetComponent<MotabhaiAI>().motaBhai.setDeathFlag(true);
         }
+
+        if (other.CompareTag("Eggman"))
+        {
+            other.gameObject.GetComponent<Eggman>().Onhit();
+            other.gameObject.GetComponent<Eggman>().motaBhai.setDeathFlag(true);
+        }
     }
 }
