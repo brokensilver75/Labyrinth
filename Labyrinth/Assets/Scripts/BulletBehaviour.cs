@@ -27,11 +27,8 @@ public class BulletBehaviour : MonoBehaviour
     {
         if (other.CompareTag("MotabhAI"))
         {
-            other.gameObject.GetComponent<MotabhaiAI>().motaBhai.OnDeath(other.gameObject.transform.position + offset);
+            other.gameObject.GetComponent<MotabhaiAI>().Onhit();
             other.gameObject.GetComponent<MotabhaiAI>().motaBhai.setDeathFlag(true);
-            //Debug.Log("Hit Eenemy");    
-            //Destroy(other.gameObject);
-            other.GetComponent<NavMeshAgent>().isStopped = true;
         }
     }
 }

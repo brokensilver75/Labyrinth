@@ -9,7 +9,7 @@ public class Enemy
     float sightRange, attackRange, timebetweenAttacks;
     Gun gun;
     float dropChance = 0;
-    Animator enemyAnimator;
+    public Animator enemyAnimator;
 
     //DeathFlag
     bool isDead;
@@ -46,14 +46,16 @@ public class Enemy
         return timebetweenAttacks;
     }
 
-    public void OnDeath(Vector3 position)
+    /*public void OnDeath(Vector3 position)
     {
-        dropChance = Random.Range(0, 2);
-        if (dropChance != 0)
-        Object.Instantiate(ammoDrop, position, Quaternion.identity);
+        //dropChance = Random.Range(0, 2);
+        //if (dropChance != 0)
+        //Object.Instantiate(ammoDrop, position, Quaternion.identity);
         enemyAnimator.SetBool("isMoving", false);
         enemyAnimator.SetBool("isDead", true);
-    }
+        //enemyAnimator.speed = 0;
+        
+    }*/
 
     public bool getDeathFlag()
     {
@@ -75,5 +77,4 @@ public class Enemy
         this.isDead = isDead;
         this.enemyAnimator = enemyAnimator;
     }
-
 }

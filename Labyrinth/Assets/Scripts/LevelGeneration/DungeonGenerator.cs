@@ -31,12 +31,20 @@ public class DungeonGenerator : MonoBehaviour
     public Vector2 offset;
 
     public int startPos = 0;
+
     //Cell currently visited or Cell we are currently in
-    int currentRoom;
+    int currentRoom = 0;
+
     Stack<int> path = new Stack<int>();
     
     //Grid Iterator
     int k = 0;
+
+    //Visited Cells Iterator
+    int visitedCount = 0;
+
+    //Loop iterator
+    int gridCount = 0;
 
     //List of neighbors
     List<int> neighbors;
@@ -49,12 +57,15 @@ public class DungeonGenerator : MonoBehaviour
     //Total Grid containing all the rooms
     List<Cell> grid;
 
+    List<Cell> visitedCells;
+
     // Start is called before the first frame update
     void Start()
     {
         //roomPrefab = new GameObject[2];
         Mazegenerator();
         navMeshPlane.BuildNavMesh();
+        Debug.Log(visitedCount);
     }
 
     // Update is called once per frame
@@ -69,21 +80,27 @@ public class DungeonGenerator : MonoBehaviour
         {
             for (int j = 0; j < size.y; j++)
             {
-                
-                /*if (i == 0 && j == 0)
-                {
-                    Instantiate(player, new Vector3(i * offset.x, 0, -j * offset.y), Quaternion.identity, transform);
-                }*/
-                
-
                 currentCell = grid[Mathf.FloorToInt(i + j * size.x)];
+                
                 if (currentCell.visited)
                 {
-                    newRoom = Instantiate(roomPrefab[Random.Range(0,2)], new Vector3(i * offset.x, 0, -j * offset.y), Quaternion.identity, transform).GetComponent<RoomBehaviour>();
-                    //Add a few lines here for the different layout thing. (Check currentCell status and set wall and door to 50-50
+                    if (gridCount == visitedCount)
+                    {
+                        newRoom = Instantiate(roomPrefab[1], new Vector3(i * offset.x, 0, -j * offset.y), Quaternion.identity, transform).GetComponent<RoomBehaviour>();
+
+                        newRoom.UpdateRoom(currentCell.status);
+
+                        newRoom.name += " " + i + "-" + j;
+
+                        break;
+                    }
+                    newRoom = Instantiate(roomPrefab[0], new Vector3(i * offset.x, 0, -j * offset.y), Quaternion.identity, transform).GetComponent<RoomBehaviour>();
+                    
                     newRoom.UpdateRoom(currentCell.status);
 
                     newRoom.name += " " + i + "-" + j;
+                    gridCount++;
+                    Debug.Log(gridCount);
                 }
                 
             }
@@ -94,6 +111,7 @@ public class DungeonGenerator : MonoBehaviour
     {
         //Initialize the grid
         grid = new List<Cell>();
+        visitedCells = new List<Cell>();
 
         //One Cell, one cell in the grid
         for (int i = 0; i < size.x; i++)
@@ -112,6 +130,10 @@ public class DungeonGenerator : MonoBehaviour
             k++;
 
             grid[currentRoom].visited = true;
+            //visitedCells[visitedCount] = grid[currentRoom];
+            
+            
+
 
             if (currentRoom == grid.Count - 1)
             {
@@ -137,7 +159,7 @@ public class DungeonGenerator : MonoBehaviour
             else
             {
                 path.Push(currentRoom);
-
+                visitedCount++;
                 newCell = neighbors[Random.Range(0, neighbors.Count)];
 
                 //down or right

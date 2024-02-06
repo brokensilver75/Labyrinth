@@ -6,6 +6,7 @@ using UnityEngine.UIElements;
 using UnityEngine.VFX;
 using UnityEngine.Animations;
 using UnityEditor.Animations;
+using Unity.VisualScripting;
 
 public class MotabhaiAI : MonoBehaviour
 {
@@ -50,13 +51,15 @@ public class MotabhaiAI : MonoBehaviour
         playerInSightRange = Physics.CheckSphere(transform.position, sightRange, playerLayer);
         playerInAttackRange = Physics.CheckSphere(transform.position, attackRange, playerLayer);
 
-        if (playerInSightRange && !playerInAttackRange) ChasePlayer();
-        if (playerInAttackRange && playerInSightRange) AttackPlayer();
+        //if (playerInSightRange && !playerInAttackRange)
+        ChasePlayer();
+        //if (playerInAttackRange && playerInSightRange) AttackPlayer();
     }
 
     private void ChasePlayer()
     {
         agent.destination = playerObject.transform.position;
+        
     }
 
     private void AttackPlayer()
@@ -84,6 +87,18 @@ public class MotabhaiAI : MonoBehaviour
         Gizmos.DrawWireSphere(transform.position, attackRange);
         Gizmos.color = Color.yellow;
         Gizmos.DrawWireSphere(transform.position, sightRange);
+    }
+
+    public void Onhit()
+    {
+        StartCoroutine(Freeze());
+    }
+
+    IEnumerator Freeze()
+    {
+        motaBhaiAnimator.speed = 0;
+        yield return new WaitForSeconds(3);
+        motaBhaiAnimator.speed = 1;
     }
 
 
