@@ -21,6 +21,7 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private Transform firePoint;
     //[SerializeField] private CinemachineVirtualCamera virtualCamera;
     [SerializeField] private GameObject katta;
+    [SerializeField] private Animator playerAnimator;
     private bool moving = false;
     private Vector3 direction, mouseDirection;
     
@@ -43,23 +44,37 @@ public class PlayerController : MonoBehaviour
         Aim();
         if (moving)
         {
+            //playerAnimator.speed = 1;
             MovePlayer(direction);
-        } 
+
+        }
+
+        else
+        {
+            playerAnimator.SetBool("isMoving", false);
+        }
+        
     }
 
 
     private void MovePlayer( Vector3 moveDirection)
     {
+        playerAnimator.SetBool("isMoving", true);
         transform.position += (moveDirection * moveSpeed * Time.deltaTime);
     }
 
     private void OnMove(InputValue input)
     {
-        //Debug.Log("MOVED");
-        
-        moving = true;
-        direction = input.Get<Vector3>();
-        //playerRb.velocity = input.Get<Vector3>() * moveSpeed * Time.deltaTime;
+        if (input.Get<Vector3>() == Vector3.zero)
+        {
+            moving = false;
+        }
+        else 
+        {
+            moving = true;
+            direction = input.Get<Vector3>();
+        }
+            //moving = false;       
     }
 
     private (bool success, Vector3 position) GetMousePosition()

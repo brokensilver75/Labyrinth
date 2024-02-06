@@ -216,6 +216,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Red-head
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 1142530d2a8faa0489e94fd668f253e4,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -362,6 +367,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Egg-boy
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 933eba28f5ad7d0499b37f9f2578f0be,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -981,6 +991,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: LaraCroft
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 3158da99cf835e4409a00e9132065ed2,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1022,17 +1037,17 @@ PrefabInstance:
     - target: {fileID: 1425207786253912507, guid: cf4ecbbfb02286d4b9d6accd485ea535,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.77
+      value: 0.38366145
       objectReference: {fileID: 0}
     - target: {fileID: 1425207786253912507, guid: cf4ecbbfb02286d4b9d6accd485ea535,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.28
+      value: 2.0715783
       objectReference: {fileID: 0}
     - target: {fileID: 1425207786253912507, guid: cf4ecbbfb02286d4b9d6accd485ea535,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0.17
+      value: 1.1224824
       objectReference: {fileID: 0}
     - target: {fileID: 1425207786253912507, guid: cf4ecbbfb02286d4b9d6accd485ea535,
         type: 3}
@@ -1562,6 +1577,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Lilboy
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 916889145a549624ba9f5e3d84cd6446,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

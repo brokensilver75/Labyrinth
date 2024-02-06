@@ -96,9 +96,11 @@ public class MotabhaiAI : MonoBehaviour
 
     IEnumerator Freeze()
     {
+        agent.isStopped = true;
         motaBhaiAnimator.speed = 0;
         yield return new WaitForSeconds(3);
         motaBhaiAnimator.speed = 1;
+        agent.isStopped = false;
     }
 
 
