@@ -14,6 +14,7 @@ public class MotabhaiAI : MonoBehaviour
     //[SerializeField] GameObject enemyShotty;
     [SerializeField] VisualEffect bloodFX;
     [SerializeField] Animator motaBhaiAnimator;
+    [SerializeField] AudioSource deathAudio;
     bool playerInSightRange, playerInAttackRange;
     public Enemy motaBhai;
 
@@ -71,7 +72,8 @@ public class MotabhaiAI : MonoBehaviour
     {
         agent.isStopped = true;
         motaBhaiAnimator.speed = 0;
-        yield return new WaitForSeconds(3);
+        deathAudio.Play();
+        yield return new WaitForSeconds(4);
         motaBhaiAnimator.speed = 1;
         agent.isStopped = false;
     }
