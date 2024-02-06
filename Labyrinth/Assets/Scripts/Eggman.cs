@@ -15,6 +15,7 @@ public class Eggman : MonoBehaviour
     //[SerializeField] GameObject enemyShotty;
     [SerializeField] VisualEffect bloodFX;
     [SerializeField] Animator motaBhaiAnimator;
+    [SerializeField] AudioSource deathAudio;
     bool playerInSightRange, playerInAttackRange;
     public Enemy motaBhai;
     private int ammoDropChance;
@@ -67,19 +68,20 @@ public class Eggman : MonoBehaviour
     public void Onhit()
     {
         ammoDropChance = Random.Range(1, 5);
-        StartCoroutine(Freeze());
+        
         if (ammoDropChance == 1)
         Instantiate(ammoDrop, transform.position, Quaternion.identity);
-        Destroy(gameObject);
+        deathAudio.Play();
+        StartCoroutine(Freeze());
     }
 
     IEnumerator Freeze()
     {
+        
         agent.isStopped = true;
-        motaBhaiAnimator.speed = 0;
-        yield return new WaitForSeconds(3);
-        motaBhaiAnimator.speed = 1;
+        yield return new WaitForSeconds(0.25f);       
         agent.isStopped = false;
+        Destroy(gameObject);
     }
 
     private void OnCollisionEnter(Collision collision)
