@@ -135,6 +135,7 @@ GameObject:
   - component: {fileID: 33401629}
   - component: {fileID: 33401628}
   - component: {fileID: 33401627}
+  - component: {fileID: 33401630}
   m_Layer: 5
   m_Name: Lore
   m_TagString: Untagged
@@ -159,8 +160,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 656, y: 26}
-  m_SizeDelta: {x: 600, y: 220}
+  m_AnchoredPosition: {x: 666.74, y: 31.5638}
+  m_SizeDelta: {x: 578.53, y: 208.8723}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &33401627
 MonoBehaviour:
@@ -244,6 +245,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 33401625}
   m_CullTransparentMesh: 1
+--- !u!114 &33401630
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 33401625}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c1f45f6447eae9544a065fcfbe455c8f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  LoreText: {fileID: 1648582893}
 --- !u!1 &244676759
 GameObject:
   m_ObjectHideFlags: 0
@@ -709,6 +723,7 @@ GameObject:
   - component: {fileID: 602346433}
   - component: {fileID: 602346432}
   - component: {fileID: 602346431}
+  - component: {fileID: 602346434}
   m_Layer: 5
   m_Name: Quit
   m_TagString: Untagged
@@ -733,8 +748,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 654, y: -429}
-  m_SizeDelta: {x: 600, y: 220}
+  m_AnchoredPosition: {x: 665.74, y: -413.6994}
+  m_SizeDelta: {x: 576.53, y: 189.3988}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &602346431
 MonoBehaviour:
@@ -818,6 +833,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 602346429}
   m_CullTransparentMesh: 1
+--- !u!114 &602346434
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 602346429}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5cb07018d4253364fa573641eb3b5a00, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &727400874
 GameObject:
   m_ObjectHideFlags: 0
@@ -830,6 +857,7 @@ GameObject:
   - component: {fileID: 727400878}
   - component: {fileID: 727400877}
   - component: {fileID: 727400876}
+  - component: {fileID: 727400879}
   m_Layer: 5
   m_Name: Controls
   m_TagString: Untagged
@@ -854,8 +882,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 655, y: -199}
-  m_SizeDelta: {x: 600, y: 220}
+  m_AnchoredPosition: {x: 666.24, y: -183.6994}
+  m_SizeDelta: {x: 577.53, y: 189.3989}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &727400876
 MonoBehaviour:
@@ -939,6 +967,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 727400874}
   m_CullTransparentMesh: 1
+--- !u!114 &727400879
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 727400874}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9ae2754ea6b57a4439749a236d3041e5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Controls: {fileID: 1648582893}
 --- !u!1 &789807585
 GameObject:
   m_ObjectHideFlags: 0
@@ -1244,6 +1285,7 @@ GameObject:
   - component: {fileID: 1634496043}
   - component: {fileID: 1634496042}
   - component: {fileID: 1634496041}
+  - component: {fileID: 1634496044}
   m_Layer: 5
   m_Name: StartButton
   m_TagString: Untagged
@@ -1268,8 +1310,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 658, y: 241}
-  m_SizeDelta: {x: 600, y: 200}
+  m_AnchoredPosition: {x: 667.7368, y: 254.90967}
+  m_SizeDelta: {x: 580.5265, y: 172.1807}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1634496041
 MonoBehaviour:
@@ -1353,6 +1395,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1634496039}
   m_CullTransparentMesh: 1
+--- !u!114 &1634496044
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1634496039}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9fe07004d6dac7244b042d11e7542df7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  LoadingText: {fileID: 1648582893}
 --- !u!1 &1648582891
 GameObject:
   m_ObjectHideFlags: 0
@@ -1387,7 +1442,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -560, y: -132}
+  m_AnchoredPosition: {x: -560, y: -181.18}
   m_SizeDelta: {x: 700, y: 700}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1648582893
@@ -1423,10 +1478,10 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'W,S,A,D - To move
-
-
-    Aim and Shoot with Mouse'
+  m_Text: Tasked by the, Elder of your poor and sick village, you have finally breached
+    through the doors of the Castle under the Mountains, armed with the holy LIGHT
+    emitting Gun to Cull the evil. Get to the Treasure before the Demons protecting
+    it get you and spread joy and happiness to your village.
 --- !u!222 &1648582894
 CanvasRenderer:
   m_ObjectHideFlags: 0

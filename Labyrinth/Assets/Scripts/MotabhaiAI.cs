@@ -2,11 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
-using UnityEngine.UIElements;
 using UnityEngine.VFX;
-using UnityEngine.Animations;
-using UnityEditor.Animations;
-using Unity.VisualScripting;
 using UnityEngine.SceneManagement;
 
 public class MotabhaiAI : MonoBehaviour
